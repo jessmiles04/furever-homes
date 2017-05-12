@@ -1,0 +1,65 @@
+body {
+    background: url('http://www.heavenlyhousesitting.com/images/pet-group-3.png') no-repeat;
+    margin: 0;
+    background-size: cover;
+    font: 600 16px/18px 'Open Sans', sans-serif;
+}
+
+*,
+:after,
+:before {
+    box-sizing: border-box
+}
+
+h1 {
+    color: white;
+    margin-left: 20px;
+    font-family: "Denmark";
+}
+
+#home {
+    margin-left: 550px;
+}
+
+#searchAnimal {
+    color: white;
+}
+
+.clearfix:after,
+.clearfix:before {
+    content: '';
+    display: table
+}
+
+.clearfix:after {
+    clear: both;
+    display: block
+}
+
+a {
+    color: inherit;
+    text-decoration: none
+}
+
+#button {
+    width: 400px;
+    align-content: center;
+    margin-left: 375px;
+}
+
+.main-center {
+    margin-top: 30px;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 10px 40px;
+    background: rgba(40, 57, 101, .9);
+    opacity: .9;
+}
+
+.form-control {
+    border: none;
+    padding: 15px 20px;
+    border-radius: 25px;
+    opacity: .9;
+}
+
