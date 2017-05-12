@@ -13,44 +13,48 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false
       },
 
-	  breed: {
+	     breed: {
         type: DataTypes.STRING,
         allowNull: false
       },
 	
-	  age: {
+	    age: {
         type: DataTypes.STRING,
         allowNull: false
       },
 
-	 temper: {
+	    temper: {
         type: DataTypes.STRING,
         allowNull: false
       },
 	
-	  fosterHome: {
-        type: DataTypes.STRING,
+	    // fosterHome: {
+      //   type: DataTypes.STRING,
+      //   allowNull: false
+      // },
+
+	    description: {
+        type: DataTypes.TEXT,
         allowNull: false
       },
-
-	  Description: {
+      image: {
         type: DataTypes.STRING,
-        allowNull: false
       },
-
       // Available
       available: {
         type: DataTypes.BOOLEAN,
         defaultValue: false
-  }, {
+  },
+   
       classMethods: {
         associate: function(models) {
-          fosterHome.belongsTo(models.fosterHome, {
-            onDelete: "CASCADE",
+          fosterHome.belongsTo(models.foster, {
             foreignKey: {
               allowNull: true
-            }
+              }
+            })
+          }
+        }
   });
-});
   return Pets;
 };
