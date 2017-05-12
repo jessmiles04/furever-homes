@@ -1,8 +1,10 @@
+//requirements
 var express = require("express");
 var bodyParser = require("body-parser");
 var methodOverride = require("method-override");
 var db = require("./models");
 
+//add port
 var PORT = process.env.PORT || 8080;
 
 var app = express();
@@ -23,7 +25,7 @@ require("./controllers/petsConroller.js")(app);
 require("./controllers/fosterConroller.js")(app);
 require("./controllers/adoptionConroller.js")(app);
 
-// Syncing our sequelize models and then starting our express app
+// syncing sequelize models and then starting express app
 db.sequelize.sync({ force: false }).then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
