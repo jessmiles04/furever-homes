@@ -17,7 +17,7 @@ module.exports = function(app) {
                 species: req.body.species,
                 age: req.body.age,
                 gender: req.body.gender,
-                temperament: req.body.temperament
+                temper: req.body.temperament
             }
         }).then(function(dbPets) {
             res.render("customer_results", {result:dbPets});
