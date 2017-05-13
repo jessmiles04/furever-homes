@@ -21,9 +21,9 @@ var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-require("./controllers/petsConroller.js")(app);
-require("./controllers/fosterConroller.js")(app);
-require("./controllers/adoptionConroller.js")(app);
+require("./controllers/petsController.js")(app);
+require("./controllers/fosterController.js")(app);
+require("./controllers/adoptionController.js")(app);
 
 // syncing sequelize models and then starting express app
 db.sequelize.sync({ force: false }).then(function() {
