@@ -39,9 +39,13 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.STRING,
         allowNull: false
       },
-        image: {
+      image: {
         type: DataTypes.STRING,
-      }
+      },   
+      active: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: true
+  },
     },
       {
         classMethods: {

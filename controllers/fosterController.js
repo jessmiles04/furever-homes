@@ -39,7 +39,6 @@ module.exports = function(app) {
     //display foster home information on foster home page
     app.get("/foster_home/:id", function (req, res) {
         db.fosterHome.findAll({
-
             where: {
                 id: req.params.id
             }
