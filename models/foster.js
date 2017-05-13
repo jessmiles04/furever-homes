@@ -3,6 +3,14 @@ module.exports = function(sequelize, DataTypes) {
   var FosterHome = sequelize.define("FosterHome", 
     {
       // Name
+        userName: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
+      password: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
         fosterHome: {
         type: DataTypes.STRING,
         allowNull: false
