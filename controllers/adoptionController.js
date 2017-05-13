@@ -5,15 +5,13 @@ var db = require("../models");
 //controller for potential adopters
 module.exports = function(app) {
 
-    //display pets data on main page
+    //display main page
     app.get("/", function (req, res) {
-        db.Pets.findAll({}).then(function(dbPets) {
-            res.render("index", {result:dbPets});
-        });
+            res.render("index");
     });
 
     //display pets data searched for by user
-    app.get("/find", function (req, res) {
+    app.get("/search", function (req, res) {
         db.Pets.findAll({
             where: {
                 species: req.body.species,
@@ -27,11 +25,11 @@ module.exports = function(app) {
     });
 
     //display pet information of a specific foster home to foster home admin page
-    app.get("/admin", function (req,res) {
-        db.Pets.findAll({
-            where: {
-                //needs to join tables by foster home ID
-            };
-        });
-    });
+    // app.get("/admin", function (req,res) {
+    //     db.Pets.findAll({
+    //         where: {
+    //             //needs to join tables by foster home ID
+    //         }
+    //     });
+    // });
 };

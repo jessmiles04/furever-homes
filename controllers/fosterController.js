@@ -1,7 +1,7 @@
 //requirements
 var express = require("express");
 var db = require("../models");
-//var router = express.Router();
+var router = express.Router();
 
 //controller for foster homes
 module.exports = function(app) {
@@ -38,7 +38,7 @@ module.exports = function(app) {
 
     //display foster home information on foster home page
     app.get("/foster_home/:id", function (req, res) {
-        db.Foster.findAll({
+        db.fosterHome.findAll({
 
             where: {
                 id: req.params.id

@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
   // Define the Pets Sequelize model
-  var pets = sequelize.define("Pets", 
+  var Pets = sequelize.define("Pets", 
     {
       // Pet Name
       name: {
@@ -28,10 +28,10 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false
       },
 	
-	    // fosterHome: {
-      //   type: DataTypes.STRING,
-      //   allowNull: false
-      // },
+	    gender: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
 
 	    description: {
         type: DataTypes.TEXT,
@@ -44,17 +44,19 @@ module.exports = function(sequelize, DataTypes) {
       available: {
         type: DataTypes.BOOLEAN,
         defaultValue: false
+      }
   },
-   
+    {
       classMethods: {
         associate: function(models) {
-          fosterHome.belongsTo(models.foster, {
+          Pets.belongsTo(models.FosterHome, {
             foreignKey: {
               allowNull: true
-              }
-            })
-          }
+            }
+          });
         }
-  });
+      }
+    }
+  );
   return Pets;
 };
