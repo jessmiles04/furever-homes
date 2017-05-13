@@ -17,24 +17,18 @@ html {
     margin: 50px 15px;
 }
 
-h1.title {
-    font-size: 50px;
-    font-family: 'Passion One', cursive;
-    font-weight: 400;
-}
-
 h1 {
     color: white;
     margin-left: 20px;
     font-family: "Denmark";
 }
 
-#login {
-    margin-left: 400px;
+h4 {
+    font-family: "Proxima Nova";
 }
 
-#home {
-    left-margin: 800px;
+#voice {
+    color: red;
 }
 
 hr {
@@ -134,14 +128,6 @@ span.input-group-addon i {
     color: #ffffff;
 }
                                                             /*diff from Jason*/
-.shadow {
-/*box-shadow: 5px 5px 5px #888888;   */
-}
-
-.logo {
-    max-width: 100%;
-    margin: auto;
-}
 
 .match {
     color: #999999;
@@ -155,9 +141,6 @@ span.input-group-addon i {
 }
 
 .container-fluid {
-    /*margin-top: 20px;
-    margin-left: 10px;
-    margin-right: 10px;*/
     box-shadow: 5px 5px 5px #888888;
 }
 

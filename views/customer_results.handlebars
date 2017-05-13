@@ -4,16 +4,18 @@
 <script src="/assets/js/customer_results.js"></script>
 
 <!-- Navigation -->
-    <div class="shadow">
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-           <div class="container">
+
+<link rel="stylesheet" href="/static/css/searchPage.css">
+    <div>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
                     <h1>FUR-EVER HOMES</h1>
                 </div>
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div>
-                     <ul class="nav navbar-nav navbar-right">
-                        <li id="home">
+            <div>
+                <ul class="nav navbar-nav navbar-right">
+                        <li id="index">
                             <a href="/index"><span class="glyphicon glyphicon-home"></span> Home</a>
                         </li>
                     </ul>
@@ -31,11 +33,10 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h2 class="modal-title" id="resultsModalLabel"><strong>We found a pet that meets your needs!</strong></h2>
+                        <h2 class="modal-title" id="resultsModalLabel"><strong>Meet {{this.petname}}!</strong></h2>
                 </div>
                             <div class="modal-body">
-                                <h2 id="matchName">{{this.petname}}</h2>
-                                    <img class="petPicture thumbnail myBtn" width="300px" height="300px" src="{{this.petPicture}}" alt="">
+                                <img class="petPicture thumbnail myBtn" width="300px" height="300px" src="{{this.petPicture}}" alt="">
                                     <p>{{this.description}}</p>
                                     <p>Foster parents name: {{this.foster-homesName}}</p>
                                     <p>Foster parents email address: {{this.foster-homesEmail}}</p>
@@ -51,21 +52,18 @@
     <div class="row main">
         <div class="main-login main-center text-center">
 
-            <h5>Animal Search for {{data.username}}</h5>
-            <br>
-                        <br>
-                        <br>
+            <h2><strong>Pet Search</strong></h2>
             <form class="" method="POST" action="/search/{{data.username}}">
 
-                <div class="form-group" id="search-form">
+                <div class="form-group">
             
                     <div class="cols-sm-10">
-                        <label for="sel1" id="searchAnimal"><strong>Select species:</strong></label>
-                        <select class="form-control" name="animalType" id="sel1" placeholder="Species">
+                        <label id="search-pet">Select species:</label>
+                        <select class="form-control" name="animalType" placeholder="Species">
                             {{#if data.animal}}
                             <option>{{data.animal}}</option>
                             {{/if}}
-                            <option>  </option>
+                            <option> </option>
                             <option>Cat</option>
                             <option>Dog</option>
                             <option>Horse</option>
@@ -77,8 +75,8 @@
                 <div class="form-group">
                   
                     <div class="cols-sm-10">
-                        <label for="sel1" id="searchAnimal"><strong>Age:</strong></label>
-                        <select class="form-control" name="animalAge" id="sel1">
+                        <label id="search-pet">Age:</label>
+                        <select class="form-control" name="animalAge">
                             {{#if data.age}}
                             <option>{{data.age}}</option>
                             {{/if}}
@@ -92,8 +90,8 @@
                 <div class="form-group">
                    
                     <div class="cols-sm-10">
-                        <label for="sel1" id="searchAnimal"><strong>Gender:</strong></label>
-                        <select class="form-control" name="animalSex" id="sel1">
+                        <label id="search-pet">Gender:</label>
+                        <select class="form-control" name="animalGender">
                             {{#if data.gender}}
                             <option>{{data.gender}}</option>
                             {{/if}}
@@ -105,8 +103,8 @@
                 </div>
 
                 <div class="cols-sm-10">
-                        <label for="sel1" id="searchAnimal"><strong>Temperament:</strong></label>
-                        <select class="form-control" name="temp" id="temp">
+                        <label id="search-pet">Temperament:</label>
+                        <select class="form-control" name="animalTemp">
                             {{#if data.temp}}
                             <option>{{data.temp}}</option>
                             {{/if}}
@@ -116,16 +114,20 @@
                             <option>Low energy</option>
                             <option>Anxious</option>
                         </select>
+                        <br> <br> <br>
                     </div>
                 </div>
-                        <br>
-                        <br>
 
-                <button type="submit" id="button" class=" btn btn-primary btn-lg btn-block login-button "><strong>Search For Animals</strong></button>
+                <br>
+                <br>
+
+                <button type="submit" id="button" class=" btn btn-primary btn-lg btn-block login-button "><strong>Search For Pet</strong></button>
 
             </form>
         </div>
     </div>
 </div>
+
+
 
 
