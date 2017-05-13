@@ -42,6 +42,10 @@ module.exports = function(sequelize, DataTypes) {
         image: {
         type: DataTypes.STRING,
       },
+        active: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: true
+  },
         classMethods: {
         associate: function(models) {
         fosterHome.hasMany(models.pets, {

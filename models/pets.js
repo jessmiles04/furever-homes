@@ -43,7 +43,7 @@ module.exports = function(sequelize, DataTypes) {
       // Available
       available: {
         type: DataTypes.BOOLEAN,
-        defaultValue: false
+        defaultValue: true
   },
    
       classMethods: {
