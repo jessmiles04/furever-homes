@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "Zeke3son!",
-    "database": "database_development",
+    "database": "furever_homes_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

@@ -1,38 +1,28 @@
+
 var express = require("express");
 var router = express.Router();
-// Routes
-// =============================================================
 
-  router.get("/signup", function(req, res) {
-      var hbsObject = {BadPassword: true, baderror: "Incorrect Password"};
-      return res.render("signup", hbsObject);
-   });
+//pets controller
+module.exports = function (app) {
 
-   router.get("/login", function(req, res) {
-      var hbsObject = {BadPassword: true, baderror: "Incorrect Password"};
-      return res.render("login", hbsObject);
-   });
+    //post pet information to the database from the admin screen
+    app.post("/add_pet", function (req, res) {
+        db.Pets.create({
+            name: req.body.name,
+            species: req.body.species,
+            breed: req.body.breed,
+            age: req.body.age,
+            gender: req.body.gender,
+            temperament: req.body.temperament,
+            description: req.body.description
+        }).then(function(dbPets) {
+            res.redirect("/admin")
+        }).catch(function (error) {
+            console.log(error.message);
+            res.status(500).json({error: error.message});
+        });
+    });
 
+    //edit pet information from admin page
 
-router.get("/index", function(req, res) {
-      var hbsObject = {BadPassword: true, baderror: "Incorrect Password"};
-      return res.render("index", hbsObject);
-   });
-
-router.get("/search", function(req, res) {
-      var hbsObject = {BadPassword: true, baderror: "Incorrect Password"};
-      return res.render("customer_results", hbsObject);
-   });
-
-router.get("/contact", function(req, res) {
-      var hbsObject = {BadPassword: true, baderror: "Incorrect Password"};
-      return res.render("foster_home_details", hbsObject);
-   });
-
-  router.post("/api/new", function(req, res) {
-
-    console.log("data", req.body);
-
-  });
-
-module.exports = router;
+};
