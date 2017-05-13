@@ -1,7 +1,6 @@
-//requirements
-var express = require("express");
-var db = require("../models");
 
+var express = require("express");
+var router = express.Router();
 
 //pets controller
 module.exports = function (app) {

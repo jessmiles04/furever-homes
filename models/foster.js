@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
   // Define the Foster Sequelize model
-  var pets = sequelize.define("FosterHome", 
+  var fosterHome = sequelize.define("FosterHome", 
     {
       // Name
         fosterHome: {
@@ -15,17 +15,17 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.STRING,
         allowNull: false
       },
-	  county: {
+	    county: {
         type: DataTypes.STRING,
         allowNull: false
       },
 	
-	  contact: {
+	    contact: {
         type: DataTypes.STRING,
         allowNull: false
       },
 
-	 email: {
+	    email: {
         type: DataTypes.STRING,
         allowNull: false
       },
@@ -38,8 +38,18 @@ module.exports = function(sequelize, DataTypes) {
       website: {
         type: DataTypes.STRING,
         allowNull: false
+      },
+        image: {
+        type: DataTypes.STRING,
+      },
+        classMethods: {
+        associate: function(models) {
+        fosterHome.hasMany(models.pets, {
+        onDelete: "cascade"
+          })
+     }
   }
-  });
+});
 
   return fosterHome;
 };

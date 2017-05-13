@@ -47,7 +47,7 @@ $(document).ready(function() {
     });
 
     $('body').keyup((e) => {
-        Confurm(email, name, username)
+        Confirm(email, name, username)
 
     })
 
@@ -67,7 +67,7 @@ $(document).ready(function() {
         console.log(passwordArr, passwordtoMatch)
     });
 
-    let Confurm = (email, name, username) => {
+    let Confirm = (email, name, username) => {
         if (passwordArr.length >= 5 && passwordtoMatch.length >= 5 && name.val().length >= 4 && username.val().length >= 4) {
             if (passwordArr.toString() == passwordtoMatch.toString()) {
                 console.log('password matches')

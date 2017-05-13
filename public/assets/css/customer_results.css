@@ -1,9 +1,19 @@
+
 body {
     background: url('http://www.heavenlyhousesitting.com/images/pet-group-3.png') no-repeat;
     margin: 0;
     background-size: cover;
     font: 600 16px/18px 'Open Sans', sans-serif;
 }
+
+#search-pet {
+    color:white;
+}
+
+/*#choice {
+    color: black;
+    font-size: 20px;
+}*/
 
 *,
 :after,
@@ -17,11 +27,7 @@ h1 {
     font-family: "Denmark";
 }
 
-#home {
-    margin-left: 550px;
-}
-
-#searchAnimal {
+h2 {
     color: white;
 }
 
@@ -63,3 +69,6 @@ a {
     opacity: .9;
 }
 
+.main{
+    margin-top:100px;
+}
