@@ -7,7 +7,11 @@ module.exports = function(app) {
 
     //display main page
     app.get("/", function (req, res) {
-            res.render("index");
+        res.render("index");
+    });
+
+    app.get("/index", function (req, res) {
+        res.render("index");
     });
 
     //display pets data searched for by user
