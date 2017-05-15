@@ -20,9 +20,6 @@
                     <li id="login">
                         <a href="/login"><span class="glyphicon glyphicon-log-in"></span>Login</a>
                     </li>
-                    <li>
-                        <a href="/contact"><span class="glyphicon glyphicon-pencil"></span> Foster Home Page</a>
-                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -44,26 +41,22 @@
                         {{/if}}
                         <div class="group">
                             <label for="user" class="label">Name</label>
-                            <input id="user" type="text" name="name"  class="input">
+                            <input id="name" type="text" class="input">
                         </div>
                         <div class="group">
-                            <label for="user" class="label">Username</label>
-                            <input id="user" type="text" name="username"  class="input">
-                        </div>
-                        <div class="group">
-                            <label for="pass" class="label">Password</label>
-                            <input id="pass" type="password" id="password" name="password"  class="input" data-type="password">
+                            <label for="password" class="label">Password</label>
+                            <input id="password" type="password" class="input" data-type="password">
                         </div>
                         <div class="group">
                             <label for="pass" class="label">Repeat Password</label>
-                            <input id="pass" type="password" class="input" name="confirm" data-type="password">
+                            <input id="confirm" type="confirm" class="input" data-type="confirm">
                         </div>
                         <div class="group">
-                            <label for="pass" class="label">Email Address</label>
-                            <input id="pass" type="text" name="email" class="input">
+                            <label for="email" class="label">Email Address</label>
+                            <input id="email" type="text" class="input">
                         </div>
                         <div class="group">
-                            <input type="submit" class="button" value="Sign Up">
+                            <a href="/admin_page"><input type="submit" class="btn" value="Sign Up">
                         </div>
                     </div>
                 </div>

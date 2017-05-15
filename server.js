@@ -13,6 +13,8 @@ app.use(express.static(process.cwd() + "/public"));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(bodyParser.text());
+app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 app.use(methodOverride("_method"));
 
@@ -26,8 +28,8 @@ require("./controllers/fosterController.js")(app);
 require("./controllers/adoptionController.js")(app);
 
 // syncing sequelize models and then starting express app
-db.sequelize.sync({ force: false }).then(function() {
-  app.listen(PORT, function() {
-    console.log("App listening on PORT " + PORT);
-  });
+db.sequelize.sync({ force: true }).then(function() {
+    app.listen(PORT, function() {
+        console.log("App listening on PORT " + PORT);
+    });
 });

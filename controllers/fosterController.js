@@ -6,36 +6,6 @@ var db = require("../models");
 //controller for foster homes
 module.exports = function(app) {
 
-//     //display signup page
-//     router.get("/signup", function(req, res) {
-//         var hbsObject = {BadPassword: true, baderror: "Incorrect Password"};
-//         return res.render("signup", hbsObject);
-//     });
-
-//    //display login page
-//     router.get("/login", function(req, res) {
-//         var hbsObject = {BadPassword: true, baderror: "Incorrect Password"};
-//         return res.render("login", hbsObject);
-//     });
-
-//     //display index page
-//     router.get("/index", function(req, res) {
-//         var hbsObject = {BadPassword: true, baderror: "Incorrect Password"};
-//         return res.render("index", hbsObject);
-//     });
-
-//     //display customer results
-//     router.get("/search", function(req, res) {
-//         var hbsObject = {BadPassword: true, baderror: "Incorrect Password"};
-//         return res.render("customer_results", hbsObject);
-//     });
-
-//     //display contact page
-//     router.get("/contact", function(req, res) {
-//         var hbsObject = {BadPassword: true, baderror: "Incorrect Password"};
-//         return res.render("foster_home_details", hbsObject);
-//     });
-
     //display foster home information on foster home page
     app.get("/foster_home/:id", function (req, res) {
         db.Foster.findAll({
