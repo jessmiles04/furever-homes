@@ -1,5 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
-// Define the Foster Sequelize model
+  
+  // Define the Foster Sequelize model
   var FosterHome = sequelize.define("FosterHome", 
     {
       // Name
@@ -8,6 +9,10 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false
       },
       password: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
+        fosterHome: {
         type: DataTypes.STRING,
         allowNull: false
       },
@@ -60,3 +65,4 @@ module.exports = function(sequelize, DataTypes) {
       }
     );
   return FosterHome;
+};

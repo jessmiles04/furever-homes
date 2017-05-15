@@ -1,12 +1,9 @@
 //requirements
 var express = require("express");
 var db = require("../models");
-var router = express.Router();
 
 //controller for foster homes
 module.exports = function(app) {
-
-//display foster home information on foster home page
 
     app.get("/login", function (req, res) {
         res.render("login");

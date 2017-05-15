@@ -1,6 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    // Define the Pets Sequelize model
-     // Define the Pets Sequelize model
+  // Define the Pets Sequelize model
   var Pets = sequelize.define("Pets", 
     {
       // Pet Name
