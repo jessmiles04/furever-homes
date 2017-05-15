@@ -7,33 +7,28 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.STRING,
         allowNull: false
       },
-	//Species
+  //Species
       species: {
         type: DataTypes.STRING,
         allowNull: false
       },
 
-	     breed: {
+        age: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+
+        temper: {
         type: DataTypes.STRING,
         allowNull: false
       },
-	
-	    age: {
+  
+      gender: {
         type: DataTypes.STRING,
         allowNull: false
       },
 
-	    temper: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
-	
-	    gender: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
-
-	    description: {
+      description: {
         type: DataTypes.TEXT,
         allowNull: false
       },
