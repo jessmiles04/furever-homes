@@ -23,5 +23,10 @@ module.exports = function(app) {
     });
 
     //edit pet information from admin page
+<<<<<<< HEAD
 
 };
+=======
+    
+};
+>>>>>>> 9da5e215c4d5fe36480bc247949443bec5a2e7b9
