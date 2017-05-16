@@ -5,7 +5,10 @@ module.exports = function(sequelize, DataTypes) {
       // Name
         userName: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        validate: {
+          len: [6,20]
+        }
       },
       password: {
         type: DataTypes.STRING,
