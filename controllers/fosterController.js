@@ -15,7 +15,7 @@ module.exports = function(app) {
     });
 
    //display login page
-    router.get("/login", function(req, res) {
+    //router.get("/login", function(req, res) {
         var hbsObject = {BadPassword: true, baderror: "Incorrect Password"};
         return res.render("login", hbsObject);
     });
@@ -94,12 +94,10 @@ app.post("/signin", function(req, res){
                     res.status(400).json({
                           'status' : 'Invalid Username or Password'
                     });
-                })
-            });
             res.status(200).json({
                 id: foster.id,
                 username: foster.username
             });
         }
     });
-});
+})
