@@ -6,29 +6,29 @@ var router = express.Router();
 //controller for foster homes
 module.exports = function(app) {
 
-//display foster home information on foster home page
+    //display foster home information on foster home page
 
-    app.get("/login", function (req, res) {
+    app.get("/login", function(req, res) {
         res.render("login");
     })
 
-    app.get("/signup", function (req,res) {
+    app.get("/signup", function(req, res) {
         res.render("signup");
     })
 
-    app.get("/foster_home/:id", function (req, res) {
+    app.get("/foster_home/:id", function(req, res) {
         db.fosterHome.findAll({
             where: {
                 id: req.params.id
             }
         }).then(function(dbPets) {
-            res.render("index", {result:dbPets});
+            res.render("index", { result: dbPets });
         });
     });
 
 
     //add new foster home information
-    app.post("/add_foster_home", function (req, res) {
+    app.post("/add_foster_home", function(req, res) {
         db.Foster.Create({
             fosterHome: req.body.fosterHome,
             fosterParents: req.body.fosterParents,
@@ -42,9 +42,9 @@ module.exports = function(app) {
             active: true
         }).then(function(dbFoster) {
             res.redirect("/admin");
-        }).catch(function (error) {
+        }).catch(function(error) {
             console.log(error.message);
-            res.status(500).json({error: error.message});
+            res.status(500).json({ error: error.message });
         });
     });
 
