@@ -4,10 +4,10 @@ var db = require("../models");
 var router = express.Router();
 var bcrypt = require("bcrypt");
 
-
 //controller for foster homes
 module.exports = function(app) {
 
+<<<<<<< HEAD
     //display signup page
     router.get("/signup", function(req, res) {
         var hbsObject = {BadPassword: true, baderror: "Incorrect Password"};
@@ -31,22 +31,25 @@ module.exports = function(app) {
         var hbsObject = {BadPassword: true, baderror: "Incorrect Password"};
         return res.render("customer_results", hbsObject);
     });
-
-    //display contact page
-    router.get("/contact", function(req, res) {
-        var hbsObject = {BadPassword: true, baderror: "Incorrect Password"};
-        return res.render("foster_home_details", hbsObject);
-    });
-
+=======
     //display foster home information on foster home page
-    app.get("/foster_home/:id", function (req, res) {
-        db.Foster.findAll({
+>>>>>>> c817f9713e91010cacc56404ae3e7e8755246fa0
 
+    app.get("/login", function(req, res) {
+        res.render("login");
+    })
+
+    app.get("/signup", function(req, res) {
+        res.render("signup");
+    })
+
+    app.get("/foster_home/:id", function(req, res) {
+        db.fosterHome.findAll({
             where: {
                 id: req.params.id
             }
         }).then(function(dbPets) {
-            res.render("index", {result:dbPets});
+            res.render("index", { result: dbPets });
         });
     });
 
@@ -66,12 +69,14 @@ module.exports = function(app) {
             contact: req.body.contact,
             email: req.body.email,
             hours: req.body.hours,
-            website: req.body.website
+            website: req.body.website,
+            image: req.body.image,
+            active: true
         }).then(function(dbFoster) {
             res.redirect("/admin");
-        }).catch(function (error) {
+        }).catch(function(error) {
             console.log(error.message);
-            res.status(500).json({error: error.message});
+            res.status(500).json({ error: error.message });
         });
     });
 

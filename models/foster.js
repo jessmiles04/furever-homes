@@ -1,6 +1,7 @@
 module.exports = function(sequelize, DataTypes) {
+  
   // Define the Foster Sequelize model
-  var fosterHome = sequelize.define("FosterHome", 
+  var FosterHome = sequelize.define("FosterHome", 
     {
       // Name
         userName: {
@@ -18,53 +19,53 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.STRING,
         allowNull: false
       },
-      fosterParents: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
+        fosterParents: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         address: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
-	    county: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
-	
-	    contact: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        county: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
 
-	    email: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
-		  hours: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
+        contact: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
 
-      // Available
+        email: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        hours: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
       website: {
         type: DataTypes.STRING,
         allowNull: false
       },
-        image: {
+      image: {
         type: DataTypes.STRING,
-      },
-        active: {
+      },   
+      active: {
         type: DataTypes.BOOLEAN,
         defaultValue: true
   },
+    },
+      {
         classMethods: {
-        associate: function(models) {
-        fosterHome.hasMany(models.pets, {
-        onDelete: "cascade"
-          })
-     }
-  }
-});
-
-  return fosterHome;
+          associate: function(models) {
+            FosterHome.hasMany(models.Pets, {
+              onDelete: "cascade"
+            });
+          }
+        }
+      }
+    );
+  return FosterHome;
 };

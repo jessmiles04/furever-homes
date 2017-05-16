@@ -1,21 +1,25 @@
 {
   "development": {
     "username": "root",
+<<<<<<< HEAD
     "password": "D@zy2012",
+=======
+    "password": "Zeke3son!",
+>>>>>>> c817f9713e91010cacc56404ae3e7e8755246fa0
     "database": "furever_homes_db",
     "host": "3306",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": null,
+    "password": "Zeke3son!",
     "database": "database_test",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
-    "password": null,
+    "password": "Zeke3son!",
     "database": "database_production",
     "host": "127.0.0.1",
     "dialect": "mysql"
